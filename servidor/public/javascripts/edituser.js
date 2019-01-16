@@ -45,16 +45,19 @@ $("#editUser").on("click", function () {
             phone: phone,
             email: email
         }
-
+        console.log(data);
+        
         $.ajax("http://localhost:3000/api/users/" + editedUser, {
             method: "PUT",
             data: data,
             success: function () {
-                Swal("Usuario editado", "usuario editado exitosamente", "success")
-                location.href = "/users";
+                console.log("pasa")
+                // Swal("Usuario editado", "usuario editado exitosamente", "success")
+                // location.href = "/users";
             }
         })
-    } else {
-        Swal("Error", "no se pudo editar el usuario")
-    }
+    } 
+    // else {
+    //     Swal("Error", "no se pudo editar el usuario")
+    // }
 })
