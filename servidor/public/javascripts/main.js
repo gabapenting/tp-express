@@ -8,7 +8,7 @@ $.ajax("http://localhost:3000/api/users")
                 <td> ${data[i].surname} </td>
                 <td> ${data[i].email} </td>
                 <td> ${data[i].phone} </td>
-                <td> <button class= "btn" id="editButton"> <a href="users/edituser?id=${data[i].id}" type="button"> <i class="fas fa-pencil-alt"></i> </a> </button></td>
+                <td> <button class= "btn" id="editButton"> <a href="/users/edituser?id=${data[i].id}" type="button"> <i class="fas fa-pencil-alt"></i> </a> </button></td>
                 <td> <button onclick="deleteUser(${data[i].id})" class= "btn" id="deleteUserButton"> <i class="fas fa-trash-alt"></i> </button></td>
                 </tr>
         `)
@@ -30,7 +30,7 @@ $(".filterButton").click(function () {
                     <td> ${data[i].surname} </td>
                     <td> ${data[i].email} </td>
 					<td> ${data[i].phone} </td>
-					<td> <button class= "btn" id="editButton"> <a href="users/edit?id=${data[i].id}" type="button"> <i class="fas fa-pencil-alt"></i> </a> </button></td>
+					<td> <button class= "btn" id="editButton"> <a href="/edit?id=${data[i].id}" type="button"> <i class="fas fa-pencil-alt"></i> </a> </button></td>
 					<td> <button onclick="deleteUser(${data[i].id})" class= "btn" id="deleteUserButton"> <i class="fas fa-trash-alt"></i> </button></td>
 					</tr>`)
             }

@@ -45,20 +45,20 @@ router.get("/users/edituser", function (req, res, next) {
 
 ////////// validaciones //////////////
 
-function isValid() {
-  const validateMail = /^((([!#$%&"*+\-/=?^_`{|}~\w])|([!#$%&"*+\-/=?^_`{|}~\w][!#$%&"*+\-/=?^_`{|}~\.\w]{0,}[!#$%&"*+\-/=?^_`{|}~\w]))[@]\w+([-.]\w+)*\.\w+([-.]\w+)*)$/;
-  if (!validateMail.test(user.email) || user.email.length == 0) {
-    return false;
-  } else if (user.name.length == 0 || user.name.length >= 30) {
-    return false;
-  } else if (user.surname.length == 0 || user.surname.length >= 30) {
-    return false;
-  } else if (!/^\d+$/.test(user.phone)) {
-    return false;
-  } else {
-    return true;
-  }
-}
+// function isValid(user) {
+//   const validateMail = /^((([!#$%&"*+\-/=?^_`{|}~\w])|([!#$%&"*+\-/=?^_`{|}~\w][!#$%&"*+\-/=?^_`{|}~\.\w]{0,}[!#$%&"*+\-/=?^_`{|}~\w]))[@]\w+([-.]\w+)*\.\w+([-.]\w+)*)$/;
+//   if (!validateMail.test(user.email) || user.email.length == 0) {
+//     return false;
+//   } else if (user.name.length == 0 || user.name.length >= 30) {
+//     return false;
+//   } else if (user.surname.length == 0 || user.surname.length >= 30) {
+//     return false;
+//   } else if (!/^\d+$/.test(user.phone)) {
+//     return false;
+//   } else {
+//     return true;
+//   }
+// }
 ////////////////////////////////
 
 // filtro //
@@ -97,14 +97,15 @@ router.post("/api/users", function (req, res) {
     id: newId
   }
 
-  if (isValid() == true) {
+  // if (isValid() == true) {
     userFile.push(newUser);
     writeDB(userFile);
     res.json(userFile);
-  } else {
-    res.status(400).send("error");
-  }
-});
+  } 
+  // else {
+  //   res.status(400).send("error");
+  // }
+);
 
 // usuarios por id //
 
@@ -126,7 +127,7 @@ router.put("/api/users/:id", function (req, res, next) {
   const bodyKeys = Object.keys(user);
   userFile = readDB();
 
-  if (isValid() == true) {
+  // if (isValid() == true) {
     for (let i = 0; i < userFile.length; i++) {
       const currentUser = userFile[i];      
       if (id == currentUser.id) {
@@ -146,8 +147,8 @@ router.put("/api/users/:id", function (req, res, next) {
       }
     }
   }
-  location.href = "../html/index.html";
-});
+  // location.href = "../html/index.html";
+);
 
 // borrar usuario //
 
