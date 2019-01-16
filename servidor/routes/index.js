@@ -3,7 +3,7 @@ var path = require("path")
 var fs = require("fs")
 var router = express.Router();
 
-//////////// "database" ///////////
+/////////////////  "database"  //////////////////////
 const userList = "routes/db.json"
 
 function readDB() {
@@ -16,7 +16,7 @@ function writeDB(userFile) {
   fs.writeFileSync(userList, JSON.stringify(userFile))
 }
 
-////////////////////////////////// rutas //////////////////////////////////////////////
+//////////////////////// rutas //////////////////////////
 
 // ruta ping pong //
 
@@ -25,8 +25,6 @@ router.get("/estaspensandolomismoqueyobananin", function (req, res) {
   const BANANITO = "claro que si bananon";
   res.send(BANANITO);
 });
-
-////////////////////////////////////////////////////
 
 // rutas básicas //
 
@@ -45,9 +43,9 @@ router.get("/users/edituser", function (req, res, next) {
 //////////////////////////////////////////////
 
 
-///// validaciones ////
+////////// validaciones //////////////
 
-function isValid(user) {
+function isValid() {
   const validateMail = /^((([!#$%&"*+\-/=?^_`{|}~\w])|([!#$%&"*+\-/=?^_`{|}~\w][!#$%&"*+\-/=?^_`{|}~\.\w]{0,}[!#$%&"*+\-/=?^_`{|}~\w]))[@]\w+([-.]\w+)*\.\w+([-.]\w+)*)$/;
   if (!validateMail.test(user.email) || user.email.length == 0) {
     return false;
@@ -61,6 +59,7 @@ function isValid(user) {
     return true;
   }
 }
+////////////////////////////////
 
 // filtro //
 
@@ -98,7 +97,7 @@ router.post("/api/users", function (req, res) {
     id: newId
   }
 
-  if (isValid == true) {
+  if (isValid() == true) {
     userFile.push(newUser);
     writeDB(userFile);
     res.json(userFile);
@@ -127,7 +126,7 @@ router.put("/api/users/:id", function (req, res, next) {
   const bodyKeys = Object.keys(user);
   userFile = readDB();
 
-  if (isValid == true) {
+  if (isValid() == true) {
     for (let i = 0; i < userFile.length; i++) {
       const currentUser = userFile[i];      
       if (id == currentUser.id) {
