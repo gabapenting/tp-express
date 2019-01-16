@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
+        crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1> Agregar Usuario </h1>
+    </header>
+    <div class="infoUser">
+        <form action="" method="POST">
+            <input id="newName" type="text" placeholder="nombre" maxlength="30">
+            <input id="newSurname" type="text" placeholder="apellido" maxlength="30">
+            <input id="newEmail" type="email" placeholder="email">
+            <input id="newPhoneNumber" type="number" placeholder="teléfono">
+        </form>
+    </div>
+    <div>
+        <button class="btn" id="createNewUser">Crear</button>
+    </div>
+
+    <script src="../javascripts/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="../javascripts/adduser.js"></script>
+</body>
+
+</html>

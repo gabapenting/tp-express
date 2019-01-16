@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>TP API</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <div id="mainDiv">
+    <div id="usersTableDiv">
+      <h1>Usuarios</h1>
+      <div id="newUser">
+        <button id="newUserButton" class="button-secondary"><a href="/users/adduser"> Nuevo Usuario </a></button>
+      </div>
+      <div id="searchDiv">
+        <input name="filter" id="searchFilter" type="text">
+        <button class="button-small pure-button" id="filterButton">Filtrar</button>
+      </div>
+      <table class="pure-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Editar</th>
+            <th>Borrar</th>
+          </tr>
+        </thead>
+        <tbody id="infoTable">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  </div>
+
+  <script href="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+  <script src="../javascripts/sweetalert2.all.min.js"></script> 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="../javascripts/main.js"></script>
+
+</body>
+
+</html>
